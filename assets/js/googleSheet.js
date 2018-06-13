@@ -39,9 +39,9 @@ function makeApiCall() {
     for(var row=0; row<values.length; row++){
       txt += "<tr><td>"
       for(var col=0; col<values[row].length; col++){
-        txt += values[row][col];
+        txt += "<tr><td>" + values[row][col] + "</td></tr>";
       }
-      txt +="<td></tr>"
+      txt +="</td></tr>"
     }        
     document.getElementById("results").innerHTML = txt;
     console.log(txt);
