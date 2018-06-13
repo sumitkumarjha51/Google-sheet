@@ -41,11 +41,15 @@
               var txt = '';
               request.then(function(response) {
                 // TODO: Change code below to process the `response` object:
-                console.log(response.result);
+                console.log(response.result.values);
                 txt += "<table border='1'>"
                 // for (x in myObj) {
                 //     txt += "<tr><td>" + myObj[x].name + "</td></tr>";
                 // }
+                var len = response.result.values.length;
+                for (var x=0;x<len;x++){
+                  txt += "<tr><td>" + values[x] + "</td></tr>"
+                }
                 txt += "</table>"        
                 document.getElementById("results").innerHTML = txt;
               }, function(reason) {
@@ -79,27 +83,28 @@
         
             function handleClientLoad() {
               gapi.load('client:auth2', initClient);
-            }
-        
+            }   
+
             function updateSignInStatus(isSignedIn) {
               if (isSignedIn) {
-                makeApiCall();
-              }
+            makeApiCall();
             }
-        
-            function handleSignInClick(event) {
-              gapi.auth2.getAuthInstance().signIn();
-            }
-        
-            function handleSignOutClick(event) {
-              gapi.auth2.getAuthInstance().signOut();
-            }
-            
+          }
+
+          function handleSignInClick(event) {
+            gapi.auth2.getAuthInstance().signIn();
+          }
+
+          function handleSignOutClick(event) {
+            gapi.auth2.getAuthInstance().signOut();
+          }
           </script>
           <script async defer src="https://apis.google.com/js/api.js"
             onload="this.onload=function(){};handleClientLoad()"
             onreadystatechange="if (this.readyState === 'complete') this.onload()">
           </script>
+          <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+          <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
         <hr>
         <h5>All Rights Reserved</h5>
         <hr>
