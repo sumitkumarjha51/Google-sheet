@@ -43,9 +43,7 @@
                 // TODO: Change code below to process the `response` object:
                 console.log(response.result.values);
                 txt += "<table border='1'>"
-                for(x in values){
-                  txt += "<tr><td>" + vlaues[x].value + "</td></tr>";
-                }
+                
                 // for (x in myObj) {
                 //     txt += "<tr><td>" + myObj[x].name + "</td></tr>";
                 // }
@@ -54,7 +52,9 @@
                 values.forEach(function(value) {
                   console.log(value);
                 });
-
+                for(x in values){
+                  txt += "<tr><td>" + vlaues[x].value + "</td></tr>";
+                }
                 txt += "</table>"        
                 document.getElementById("results").innerHTML = txt;
                 console.log(txt);
