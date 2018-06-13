@@ -32,10 +32,17 @@ function makeApiCall() {
     values.forEach(function(value) {
       console.log(value);
     });
-    for(x in values){
+    /*for(x in values){
       txt += "<tr><td>" + values[x] + "</td></tr>";
     }
-    txt += "</table>"        
+    txt += "</table>"*/
+    for(var row=0; row<values.length; row++){
+      txt += "<tr><td>"
+      for(var col=0; col<values[row].length; col++){
+        txt += values[row][col];
+      }
+      txt +="<td></tr>"
+    }        
     document.getElementById("results").innerHTML = txt;
     console.log(txt);
   }, function(reason) {
