@@ -16,6 +16,7 @@
         <img src="./assets/images/9.jpg" width = "300px" height = "180px">
         <img src="./assets/images/10.jpg" width = "300px" height = "180px"><br>
         <hr>
+        <div id="results"></div>
         <script>
             function makeApiCall() {
               var params = {
@@ -37,9 +38,16 @@
               };
         
               var request = gapi.client.sheets.spreadsheets.values.get(params);
+              var txt = '';
               request.then(function(response) {
                 // TODO: Change code below to process the `response` object:
                 console.log(response.result);
+                txt += "<table border='1'>"
+                // for (x in myObj) {
+                //     txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+                // }
+                txt += "</table>"        
+                document.getElementById("results").innerHTML = txt;
               }, function(reason) {
                 console.error('error: ' + reason.result.error.message);
               });
@@ -86,10 +94,9 @@
             function handleSignOutClick(event) {
               gapi.auth2.getAuthInstance().signOut();
             }
-            var len = response.result.length;
-            console.log(len);
+            
           </script>
-        
+  
         <hr>
         <h5>All Rights Reserved</h5>
         <hr>
