@@ -52,6 +52,7 @@
                 }
                 txt += "</table>"        
                 document.getElementById("results").innerHTML = txt;
+                console.log(txt);
               }, function(reason) {
                 console.error('error: ' + reason.result.error.message);
               });
