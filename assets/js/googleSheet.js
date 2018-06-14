@@ -4,7 +4,7 @@ function makeApiCall() {
     spreadsheetId: '19vbsZy5JiKqdgTIVu5C10gmr6sgr4RCx-JSpwLqe38I',  // TODO: Update placeholder value.
 
     // The A1 notation of the values to retrieve.
-    range: 'Sheet1',  // TODO: Update placeholder value.
+    range: 'Assumptions',  // TODO: Update placeholder value.
 
     // How values should be represented in the output.
     // The default render option is ValueRenderOption.FORMATTED_VALUE.
@@ -36,10 +36,27 @@ function makeApiCall() {
       txt += "<tr><td>" + values[x] + "</td></tr>";
     }
     txt += "</table>"*/
+   /* var html = "<table border='1|1'>";
+for (var i = 0; i < rows.length; i++) {
+    html+="<tr>";
+    html+="<td>"+rows[i].name+"</td>";
+    html+="<td>"+rows[i].age+"</td>";
+    html+="<td>"+rows[i].email+"</td>";
+
+    html+="</tr>";
+
+}
+html+="</table>";*/
     for(var row=0; row<values.length; row++){
       txt += "<tr><td>"
       for(var col=0; col<values[row].length; col++){
-        txt += "<tr><td>" + values[row][col] + "</td></tr>";
+        if (row === 0){
+          txt += "<tr><th>" + values[row][col] + "</th></tr>";
+        }
+        else{
+          txt += "<tr><td>" + values[row][col] + "</td></tr>";
+        }
+        
       }
       txt +="</td></tr>"
     }        
