@@ -94,10 +94,11 @@ function initClient() {
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }   
-function updateSignInStatus(isSignedIn) {
+makeApiCall();
+/*function updateSignInStatus(isSignedIn) {
   if (isSignedIn) {
 makeApiCall();
-}
+}*/
 }
 function handleSignInClick(event) {
 gapi.auth2.getAuthInstance().signIn();
