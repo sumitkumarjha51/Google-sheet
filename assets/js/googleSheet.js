@@ -42,9 +42,7 @@ for (var i = 0; i < rows.length; i++) {
     html+="<td>"+rows[i].name+"</td>";
     html+="<td>"+rows[i].age+"</td>";
     html+="<td>"+rows[i].email+"</td>";
-
     html+="</tr>";
-
 }
 html+="</table>";*/
     for(var row=0; row<values.length; row++){
@@ -94,11 +92,10 @@ function initClient() {
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
 }   
-makeApiCall();
-/*function updateSignInStatus(isSignedIn) {
+function updateSignInStatus(isSignedIn) {
   if (isSignedIn) {
 makeApiCall();
-}*/
+}
 }
 function handleSignInClick(event) {
 gapi.auth2.getAuthInstance().signIn();
