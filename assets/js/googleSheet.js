@@ -35,7 +35,7 @@ function makeApiCall() {
     for(x in values){
       txt += "<tr><td>" + values[x] + "</td></tr>";
     }
-    txt += "</table>";
+    txt += "</table>"
    /* var html = "<table border='1|1'>";
 for (var i = 0; i < rows.length; i++) {
     html+="<tr>";
