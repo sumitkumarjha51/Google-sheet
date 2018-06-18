@@ -27,8 +27,7 @@ function makeApiCall() {
     // for (x in myObj) {
     //     txt += "<tr><td>" + myObj[x].name + "</td></tr>";
     // }
-    var values = JSON.parse(response.result.values);
-    console.log(typeof(values));
+    var values = response.result.values;
     var len = response.result.values.length;
     values.forEach(function(value) {
       console.log(value);
