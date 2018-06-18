@@ -7,7 +7,7 @@ function makeApiCall() {
     range: 'Assumptions',  // TODO: Update placeholder value.
 
     // How values should be represented in the output.
-    // The default render option is ValueRenderOption.FORMATTED_VALUE.
+    // The default render option is ValueRenderOption.FORMATTED_VALUE.t
    // valueRenderOption: '',  // TODO: Update placeholder value.
 
     // How dates, times, and durations should be represented in the output.
@@ -32,10 +32,10 @@ function makeApiCall() {
     values.forEach(function(value) {
       console.log(value);
     });
-    /*for(x in values){
+    for(x in values){
       txt += "<tr><td>" + values[x] + "</td></tr>";
     }
-    txt += "</table>"*/
+    txt += "</table>";
    /* var html = "<table border='1|1'>";
 for (var i = 0; i < rows.length; i++) {
     html+="<tr>";
@@ -45,7 +45,7 @@ for (var i = 0; i < rows.length; i++) {
     html+="</tr>";
 }
 html+="</table>";*/
-    for(var row=0; row<values.length; row++){
+    /*for(var row=0; row<values.length; row++){
       txt += "<tr><td>"
       for(var col=0; col<values[row].length; col++){
         if (row === 0){
@@ -57,7 +57,7 @@ html+="</table>";*/
         
       }
       txt +="</td></tr>"
-    }        
+    }   */     
     document.getElementById("results").innerHTML = txt;
     console.log(txt);
   }, function(reason) {
